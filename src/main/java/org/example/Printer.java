@@ -12,7 +12,7 @@ public class Printer {
         System.out.println("Parsed json is here:");
         for (Entity entity :
                 json_entities) {
-            System.out.print(entity.toString(FormattingTemplate.SPACED));
+            System.out.print(entity.toString(FormattingTemplate.SPACED, 0));
             if (json_entities.size() > 1) System.out.println(Token.COMMA);
         }
     }

@@ -14,7 +14,7 @@ public class ColonHandler extends Handler {
 
     @Override
     public void process() {
-        if (nextSymbol != Token.LEFT_SQUARE_BRACKET && nextSymbol != Token.LEFT_SQUARE_BRACKET) {
+        if (nextSymbol != Token.LEFT_SQUARE_BRACKET && nextSymbol != Token.LEFT_CURLY_BRACKET) {
             String name = buffer.toString();
             Entity likeAFieldEntity = new J_KeyValue(name);
             buffer.setLength(0);

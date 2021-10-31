@@ -26,8 +26,8 @@ public class J_KeyValue extends NamedEntity {
     }
 
     @Override
-    public String toString(FormattingTemplate template) {
-        return toString();
+    public String toString(FormattingTemplate template, int spacesCount) {
+        return String.valueOf(Token.SPACE).repeat(spacesCount) + toString();
     }
 
     @Override

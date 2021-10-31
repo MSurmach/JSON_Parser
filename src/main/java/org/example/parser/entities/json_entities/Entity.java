@@ -6,6 +6,6 @@ import org.example.parser.output.FormattingTemplate;
 public interface Entity {
     void include(Entity entity) throws HierarchyViolation;
 
-    String toString(FormattingTemplate template) throws Exception;
+    String toString(FormattingTemplate template, int spacesCount) throws Exception;
 
 }

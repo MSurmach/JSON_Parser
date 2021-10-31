@@ -22,10 +22,10 @@ public class J_Object extends NamedEntity {
     }
 
     @Override
-    public String toString(FormattingTemplate template) throws Exception {
+    public String toString(FormattingTemplate template, int spacesCount) throws Exception {
         switch (template) {
             case SPACED -> {
-                return getInSpacedFormat();
+                return getInSpacedFormat(spacesCount);
             }
             case COMPACT -> {
                 return getInCompactFormat();
@@ -36,31 +36,34 @@ public class J_Object extends NamedEntity {
         }
     }
 
-    private String getInCompactFormat() {
+    private String getInCompactFormat() throws Exception {
         StringBuilder nameRepresentation = new StringBuilder();
         if (!name.equals("")) {
             nameRepresentation.append(name).append(Token.COLON).append(Token.SPACE);
         }
         StringBuilder stringBuilder = new StringBuilder();
         for (int counter = 0; counter < entities.size(); counter++) {
-            stringBuilder.append(entities.get(counter));
+            stringBuilder.append(entities.get(counter).toString(FormattingTemplate.COMPACT, 0));
             if (counter != entities.size() - 1) stringBuilder.append(Token.COMMA);
         }
-        return nameRepresentation.toString() + Token.LEFT_SQUARE_BRACKET + stringBuilder.toString() + Token.RIGHT_CURLY_BRACKET;
+        return nameRepresentation.toString() + Token.LEFT_CURLY_BRACKET + stringBuilder.toString() + Token.RIGHT_CURLY_BRACKET;
     }
 
-    private String getInSpacedFormat() {
+    private String getInSpacedFormat(int spacesCount) throws Exception {
         StringBuilder nameRepresentation = new StringBuilder();
+        nameRepresentation.append(String.valueOf(Token.SPACE).repeat(spacesCount));
         if (name.equals("")) {
-            nameRepresentation.append(Token.LEFT_SQUARE_BRACKET).append(Token.LINE_FEED);
-        } else nameRepresentation.append(name).append(Token.COLON).append(Token.SPACE).append(Token.LEFT_SQUARE_BRACKET).append(Token.LINE_FEED);
+            nameRepresentation.append(Token.LEFT_CURLY_BRACKET).append(Token.LINE_FEED);
+        } else nameRepresentation.append(name).append(Token.COLON).append(Token.SPACE).append(Token.LEFT_CURLY_BRACKET).append(Token.LINE_FEED);
         StringBuilder stringBuilder = new StringBuilder();
+        //stringBuilder.append(String.valueOf(Token.SPACE).repeat(spacesCount));
         for (int counter = 0; counter < entities.size(); counter++) {
-            stringBuilder.append(entities.get(counter));
-            if (counter != entities.size() - 1) stringBuilder.append(Token.COMMA).append(Token.LINE_FEED);
+            stringBuilder.append(entities.get(counter).toString(FormattingTemplate.SPACED, spacesCount + 2));
+            if (counter != entities.size() - 1)
+                stringBuilder.append(Token.COMMA).append(Token.LINE_FEED);
             else stringBuilder.append(Token.LINE_FEED);
         }
-        return nameRepresentation.toString()+ stringBuilder.toString() + Token.RIGHT_CURLY_BRACKET;
+        return String.valueOf(nameRepresentation) + stringBuilder + String.valueOf(Token.SPACE).repeat(spacesCount) + Token.RIGHT_CURLY_BRACKET;
     }
 }
 
