@@ -5,6 +5,7 @@ import org.example.parser.entities.json_entities.Entity;
 import org.example.parser.entities.json_entities.named_structures.NamedEntity;
 import org.example.parser.entities.json_entities.values.J_Value;
 import org.example.parser.exceptions.HierarchyViolation;
+import org.example.parser.output.FormattingTemplate;
 
 public class J_KeyValue extends NamedEntity {
 
@@ -15,13 +16,18 @@ public class J_KeyValue extends NamedEntity {
     }
 
     @Override
-    public void include(Entity entity) throws HierarchyViolation{
+    public void include(Entity entity) throws HierarchyViolation {
         if (entity instanceof J_Value) {
             value = (J_Value) entity;
         } else {
             String message = "The \"KeyValue\" structure supports only \"Value\" entity attachment. The hierarchy is violated";
             throw new HierarchyViolation(message);
         }
+    }
+
+    @Override
+    public String toString(FormattingTemplate template) {
+        return toString();
     }
 
     @Override

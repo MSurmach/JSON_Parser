@@ -27,8 +27,8 @@ public class HandlerFactory {
             case Token.RIGHT_CURLY_BRACKET:
             case Token.RIGHT_SQUARE_BRACKET:
                 return new CommaHandler(currentSymbol);
-            case Token.LEFT_SQUARE_BRACKET:
             case Token.LEFT_CURLY_BRACKET:
+            case Token.LEFT_SQUARE_BRACKET:
                 return new LeftBracketHandler(currentSymbol);
             default:
                 return new DefaultHandler(currentSymbol);
