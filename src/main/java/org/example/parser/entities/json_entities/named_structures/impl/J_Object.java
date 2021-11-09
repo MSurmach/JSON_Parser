@@ -24,15 +24,12 @@ public class J_Object extends NamedEntity {
     @Override
     public String toString(FormattingTemplate template, int spacesCount) throws Exception {
         switch (template) {
-            case SPACED -> {
+            case SPACED:
                 return getInSpacedFormat(spacesCount);
-            }
-            case COMPACT -> {
+            case COMPACT :
                 return getInCompactFormat();
-            }
-            default -> {
+            default :
                 throw new Exception("Unsupported formatting template");
-            }
         }
     }
 

@@ -45,15 +45,12 @@ public class J_Array extends NamedEntity {
     @Override
     public String toString(FormattingTemplate template, int spacesCount) throws Exception {
         switch (template) {
-            case SPACED -> {
+            case SPACED:
                 return getInSpacedFormat(spacesCount);
-            }
-            case COMPACT -> {
+            case COMPACT:
                 return getInCompactFormat();
-            }
-            default -> {
+            default:
                 throw new Exception("Unsupported formatting template");
-            }
         }
     }
 
@@ -75,7 +72,8 @@ public class J_Array extends NamedEntity {
         nameRepresentation.append(String.valueOf(Token.SPACE).repeat(spacesCount));
         if (name.equals("")) {
             nameRepresentation.append(Token.LEFT_SQUARE_BRACKET).append(Token.LINE_FEED);
-        } else nameRepresentation.append(name).append(Token.COLON).append(Token.SPACE).append(Token.LEFT_SQUARE_BRACKET).append(Token.LINE_FEED);
+        } else
+            nameRepresentation.append(name).append(Token.COLON).append(Token.SPACE).append(Token.LEFT_SQUARE_BRACKET).append(Token.LINE_FEED);
         StringBuilder stringBuilder = new StringBuilder();
         for (int counter = 0; counter < entities.size(); counter++) {
             stringBuilder.append(entities.get(counter).toString(FormattingTemplate.SPACED, spacesCount + 2));
