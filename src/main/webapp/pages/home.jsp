@@ -1,20 +1,15 @@
 <html>
 <head>
     <title>JSON Formatter</title>
-<<<<<<< Updated upstream
 </head>
-<body>
-
-=======
-    <link rel="stylesheet" href="../styles/home.css">
-    <script src="../scripts/home.js"></script>
+<link href="${pageContext.request.contextPath}/styles/styles.css" rel="stylesheet" type="text/css">
+<script src="../scripts/home.js"></script>
 </head>
 <body>
 <div class="main">
     <div class="row centered">
         <span class="attractive-text">JSON Formatter</span>
     </div>
-
     <div class="row">
         <div class="col-3-4 centered">
             <div id="main-input">
@@ -56,6 +51,5 @@
         </div>
     </div>
 </div>
->>>>>>> Stashed changes
 </body>
 </html>
