@@ -1,6 +1,17 @@
 body {
-    background-color: #374b5e;
+    background-color: antiquewhite;
     font-family: Consolas, monospace;
+}
+
+a {
+    color: darkorange;
+}
+
+button {
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
 .col-3-4 {
@@ -15,9 +26,16 @@ body {
 
 .row {
     width: 100%;
-    background-color: #5b7995;
+    background-color: darkslategrey;
     margin-bottom: 30px;
-    border-radius: 15px;
+    border-radius: 6px;
+}
+
+.card {
+    background-color: #395858;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
 }
 
 .row:after {
@@ -27,13 +45,13 @@ body {
 }
 
 .attractive-text {
-    color: #f6c156;
+    color: white;
     font-size: 40px;
     padding: 10px;
 }
 
 .small-attractive-text {
-    color: #f6c156;
+    color: white;
     font-size: 25px;
     padding: 10px;
 }
@@ -42,33 +60,27 @@ body {
     text-align: center;
 }
 
-.on-the-left {
-    text-align: left;
+.on-the-right {
+    text-align: right;
 }
 
 .button {
     width: 150px;
-    background-color: #1a252d;
+    background-color: black;
     border: none;
-    color: #f6c156;
+    color: white;
     cursor: pointer;
     padding: 10px;
     margin: 10px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 20px;
 }
 
-.json-text-area {
-    width: 75%;
-    background-color: #5b7995;
-    height: 350px;
-    border-radius: 4px;
-    border: 2px solid #1a252d;
+.text-area {
+    width: 100%;
+    background-color: antiquewhite;
+    min-height: 350px;
+    border-radius: 6px;
+    border: none;
 }
 
-button {
-    background-color: #1a252d;
-    border: none;
-    cursor: pointer;
-    margin-left: -10px;
-}
