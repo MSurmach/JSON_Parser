@@ -8,8 +8,16 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>org.example.controller.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcessorServlet</servlet-name>
+        <servlet-class>org.example.controller.ProcessorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessorServlet</servlet-name>
+        <url-pattern>/process</url-pattern>
     </servlet-mapping>
 </web-app>

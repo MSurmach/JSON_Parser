@@ -1,6 +1,7 @@
 body {
     background-color: antiquewhite;
     font-family: Consolas, monospace;
+    cursor: default;
 }
 
 a {
@@ -79,8 +80,10 @@ button {
 .text-area {
     width: 100%;
     background-color: antiquewhite;
-    min-height: 350px;
     border-radius: 6px;
     border: none;
+    resize: none;
+    min-height: 250px;
 }
+
 

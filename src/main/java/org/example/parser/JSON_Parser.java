@@ -3,6 +3,7 @@ package org.example.parser;
 import org.example.parser.handler.Handler;
 import org.example.parser.handler.HandlerFactory;
 import org.example.parser.entities.json_entities.Entity;
+import org.example.parser.output.FormattingTemplate;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -29,7 +30,18 @@ public class JSON_Parser {
         return this;
     }
 
-    public ArrayList<Entity> getListOfEntities() {
+    public String getTemplatedJSONString(String template) throws Exception {
+        FormattingTemplate formattingTemplate = FormattingTemplate.valueOf(template);
+        int defaultSpacesCount = 0;
+        StringBuilder templatedJSONString = new StringBuilder();
+        for (Entity entity :
+                getListOfEntities()) {
+            templatedJSONString.append(entity.toString(formattingTemplate, defaultSpacesCount));
+        }
+        return templatedJSONString.toString();
+    }
+
+    private ArrayList<Entity> getListOfEntities() {
         return new ArrayList<>(STORAGE);
     }
 }
